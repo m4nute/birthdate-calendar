@@ -1,3 +1,4 @@
 website/database.db
 .dccache
-website/.env
+.env
+webiste/__pycache__
