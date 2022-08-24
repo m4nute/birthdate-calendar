@@ -1,2 +1,3 @@
 website/database.db
 .dccache
+website/.env
