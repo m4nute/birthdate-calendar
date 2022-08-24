@@ -1,0 +1,115 @@
+{% extends 'base.html'%} {% block title %}Sign up{% endblock %} {% block content
+%}
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0);
+  }, 4000);
+</script>
+
+<form method="POST">
+  <h3 align="center" style="margin: 10px">Sign Up</h3>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    {% if email == '' %}
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+    />
+    {% else %}
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      value="{{ email }}"
+    />
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    {% if first_name == '' %}
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+      value="{{ first_name }}"
+    />
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    {% if password == '' %}
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+    />
+    {% else %}
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+      value="{{ password }}"
+    />
+  </div>
+  {% endif %}
+  <div class="form-group">
+    <label for="password">Confirm Password</label>
+    {% if password == '' %}
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+    />
+    {% else %}
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Password"
+      value="{{ password }}"
+    />
+    {% endif %}
+  </div>
+  <div class="showP">
+    <input type="checkbox" onclick="changeType()" class="checkbox" />
+    <h6>Show Passwords</h6>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <script>
+    function changeType() {
+      var password1 = document.getElementById("password1");
+      var password2 = document.getElementById("password2");
+      if (password1.type == "password") {
+        password1.type = "text";
+        password2.type = "text";
+      } else {
+        password1.type = "password";
+        password2.type = "password";
+      }
+    }
+  </script>
+</form>
+{% endblock %}

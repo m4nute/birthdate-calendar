@@ -1,0 +1,109 @@
+.order {
+    text-decoration: underline;
+    text-align: center;
+    margin: 30px 0;
+}
+.filter {
+    text-decoration: underline;
+    text-align: center;
+    margin: 50px 0;
+    margin-bottom: 30px;
+}
+.form-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.form-container2 {
+    display: flex;
+    justify-content:space-evenly;
+}
+h4 {
+    text-align: center;
+    padding-bottom: 5px;
+}
+i {
+    padding-left: 5px;
+}
+h1 {
+    margin: 15px !important;
+    text-align: center;
+}
+table, th, td, tr, thead {
+    border: 1px solid black !important;
+    border-collapse: collapse !important;
+  }
+th {
+    color: white;
+    background-color:black;
+    opacity: 80%;
+}
+
+input {
+    width: 120px;
+}
+html, body {
+    height: 100%;
+}
+
+.btn-sm {
+    width: 60px;
+    height: 25px;
+    font-size: small;
+    padding: 0 !important;
+}
+
+.clear {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.btn-md {
+    height: 60px;
+    width: 100px;
+}
+
+.btn-select {
+    margin: 5px;
+    display: inline-block;
+}
+.btn-danger {
+    margin: 5px;
+    display: inline-block;
+}
+.btn-warning {
+    margin: 5px;
+    display: inline-block;
+}
+#myGrid {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+}
+.container {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+.buttons {
+    display: block;
+    text-align: center;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.showP {
+    margin-top: 10px;
+    display: flex;
+}
+
+.nav-link {
+    color: white !important;
+}
+.api-buttons {
+    background-color: #006aff !important;
+}

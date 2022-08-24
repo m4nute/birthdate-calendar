@@ -1,0 +1,92 @@
+{% extends 'base.html'%} {% block title %}Home{% endblock %} {% block content %}
+<h1>Birthdates</h1>
+<table id="data" class="table table-striped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Surname</th>
+      <th>Birthdate</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for date in birthdates %}
+    <tr>
+      <td class="name">{{ date.first_name }}</td>
+      <td class="surname">{{ date.surname }}</td>
+      <td class="date">
+        {{ date.birthdate }}
+        <button type="button" class="close" onclick="deleteDate({{ date.id }})">
+          <span area-hidden="true" style="color: red">&times;</span>
+        </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h3 class="order">Order By</h3>
+<form method="post">
+  <div class="form-container">
+    <input type="hidden" name="identifier" value="sorting" />
+    <div class="name">
+      <h4>First Name</h4>
+      <button href="/" class="btn btn-dark" name="sort" value="name_asc">
+        ASC<i class="fas fa-sort-up"></i>
+      </button>
+      <button href="/" class="btn btn-dark" name="sort" value="name_desc">
+        DESC<i class="fas fa-sort-down"></i>
+      </button>
+    </div>
+    <div class="surname">
+      <h4>Surname</h4>
+      <button href="/" class="btn btn-dark" name="sort" value="surname_asc">
+        ASC<i class="fas fa-sort-up"></i>
+      </button>
+      <button href="/" class="btn btn-dark" name="sort" value="surname_desc">
+        DESC<i class="fas fa-sort-down"></i>
+      </button>
+    </div>
+    <div class="date">
+      <h4>Date</h4>
+      <button href="/" class="btn btn-dark" name="sort" value="date_asc">
+        ASC<i class="fas fa-sort-up"></i>
+      </button>
+      <button href="/" class="btn btn-dark" name="sort" value="date_desc">
+        DESC<i class="fas fa-sort-down"></i>
+      </button>
+    </div>
+  </div>
+</form>
+<h3 class="filter">Filter By</h3>
+<div class="form-container2">
+  <div class="name">
+    <form method="post">
+      <h4>First Name</h4>
+      <input type="hidden" name="identifier" value="first_name" />
+      <input type="text" href="/" name="filter" placeholder="Enter Name" />
+      <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
+    </form>
+  </div>
+  <div class="name">
+    <form method="post">
+      <h4>Surname</h4>
+      <input type="hidden" name="identifier" value="surname" />
+      <input type="text" href="/" name="filter" placeholder="Enter Surname" />
+      <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
+    </form>
+  </div>
+  <div class="name">
+    <form method="post">
+      <h4>Date</h4>
+      <input type="hidden" name="identifier" value="date" />
+      <input type="date" href="/" name="filter" placeholder="Enter Date" />
+      <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
+    </form>
+  </div>
+</div>
+<div class="clear">
+  <form method="post">
+    <input type="hidden" name="identifier" value="clear" />
+    <input class="btn btn-primary btn-md" type="submit" value="Clear All" />
+  </form>
+</div>
+{% endblock %}

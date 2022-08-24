@@ -1,0 +1,76 @@
+{% extends 'base.html'%} {% block title %}Add Person{% endblock %} {% block
+content %}
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0);
+  }, 4000);
+</script>
+<form method="POST">
+  <h3 align="center" style="margin: 10px">Add a new person</h3>
+  <div class="form-group">
+    <label for="first_name">First Name</label>
+    {% if first_name == '' %}
+    <input
+      type="text"
+      id="name"
+      name="first_name"
+      class="form-control"
+      placeholder="Enter name"
+    />
+    {% else %}
+    <input
+      type="text"
+      id="name"
+      name="first_name"
+      class="form-control"
+      placeholder="Enter name"
+      value="{{ first_name }}"
+    />
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="surname">Surname</label>
+    {% if surname == '' %}
+    <input
+      type="text"
+      id="surname"
+      name="surname"
+      class="form-control"
+      placeholder="Enter surname"
+    />
+    {% else %}
+    <input
+      type="text"
+      id="surname"
+      name="surname"
+      class="form-control"
+      placeholder="Enter surname"
+      value="{{ surname }}"
+    />
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="birthdate">Date</label>
+    {% if birthdate == '' %}
+    <input
+      type="date"
+      id="birthdate"
+      name="birthdate"
+      class="form-control"
+      placeholder="Enter birthdate"
+    />
+    {% else %}
+    <input
+      type="date"
+      id="birthdate"
+      name="birthdate"
+      class="form-control"
+      placeholder="Enter birthdate"
+      value=" {{ birthdate }}"
+    />
+    {% endif %}
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

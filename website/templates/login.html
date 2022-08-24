@@ -1,0 +1,67 @@
+{% extends 'base.html'%} {% block title %}Login{% endblock %} {% block content
+%}
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0);
+  }, 4000);
+</script>
+<form method="POST">
+  <h3 align="center" style="margin: 10px">Login</h3>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    {% if email == '' %}
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="example@gmail.com"
+    />
+    {% else %}
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="example@gmail.com"
+      value="{{ email }}"
+    />
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="password">Password <i class="fa fa-lock"></i></label>
+    {% if password == '' %}
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter Password"
+      />
+    {% else %}
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter Password"
+      value="{{ password }}"
+      />
+      {% endif %}
+    <div class="showP">
+      <input type="checkbox" onclick="changeType()" class="checkbox"> <h6>Show Password</h6>
+    </div>
+  <button type="submit" class="btn btn-primary" style="margin-top: 15px;">Login</button>
+  <script>
+    function changeType(){
+      var password = document.getElementById('password');
+      if (password.type== 'password'){
+          password.type='text';
+      }
+      else{
+          password.type='password';
+      }
+    }
+  </script>
+  {% endblock %}
+</form>

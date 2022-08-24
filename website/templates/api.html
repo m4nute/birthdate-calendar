@@ -1,0 +1,34 @@
+{% extends 'base.html'%} {% block title %}Home{% endblock %} {% block content %}
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0);
+  }, 4000);
+</script>
+<h1>Birthdates</h1>
+<div class="buttons">
+  <button
+    class="btn btn-primary btn-select api-buttons"
+    style="margin-left: 0px"
+    onclick="selectAll()"
+  >
+    Select All
+  </button>
+  <button
+    class="btn btn-primary btn-select api-buttons"
+    onclick="deselectAll()"
+  >
+    Deselect All
+  </button>
+  <button class="btn btn-danger" onclick="removeSelected()" id="removeButton">
+    Remove
+  </button>
+  <button
+    class="btn btn-success"
+    onclick="window.location.href='/add'"
+    id="removeButton"
+  >
+    Add
+  </button>
+</div>
+<div id="myGrid" class="ag-theme-alpine" data-user="{{ user.id }}"></div>
+{% endblock %}
